@@ -1,0 +1,171 @@
+﻿@model BoatRental.Models.BookNowDatabase
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Book Now</h4>
+<h6>@ViewBag.Message</h6>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label">First Name</label>
+                <input asp-for="FirstName" class="form-control" placeholder="First Name *" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label">Last Name</label>
+                <input asp-for="LastName" class="form-control" placeholder="Last Name *" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Email</label>
+                <input asp-for="Email" class="form-control" placeholder="Email *" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
+                <input asp-for="PhoneNumber" class="form-control" placeholder="Phone Number *" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Calendar" class="control-label"> Booking Calendar</label>
+                <input asp-for="Calendar" class="form-control" placeholder="Select date *" />
+                <span asp-validation-for="Calendar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Destination" class="control-label"></label>
+                <select asp-for="Destination" class="form-control">
+                    <option>Lokrum</option>
+                    <option>Koločep (Kalamota)</option>
+                    <option>Lopud</option>
+                    <option>Šipan</option>
+                    <option>Mljet</option>
+                    <option>Korčula</option>
+                    <option>Lastovo</option>
+                </select>
+                <span asp-validation-for="Destination" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TripLength" class="control-label">Trip Length</label>
+                <select asp-for="TripLength" class="form-control" placeholder="Select *">
+                    <option>Half Day</option>
+                    <option>Full Day</option>
+                    <option>3 Days</option>
+                </select>
+                <span asp-validation-for="TripLength" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Food" /> @Html.DisplayNameFor(model => model.Food)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Drinks" /> @Html.DisplayNameFor(model => model.Drinks)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TourGuide" /> Tour Guide
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Payment" class="control-label"></label>
+                <select asp-for="Payment" class="form-control" placeholder="Select *">
+                    <option>Cash</option>
+                    <option>Credit Card</option>
+                </select>
+                <span asp-validation-for="Payment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6 col-md-offset-2" style="padding-left:75px">
+        <section>
+            <h4>Price List</h4>
+            <hr />
+                    <div>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Island</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Lokrum</td>
+                                    <td>25 $</td>
+                                </tr>
+                                <tr>
+                                    <td>Koločep (Kalamota)</td>
+                                    <td>50 $</td>
+                                </tr>
+                                <tr>
+                                    <td>Lopud</td>
+                                    <td>75 $</td>
+                                </tr>
+                                <tr>
+                                    <td>Šipan</td>
+                                    <td>100 $</td>
+                                </tr>
+                                <tr>
+                                    <td>Mljet</td>
+                                    <td>150 $</td>
+                                </tr>
+                                <tr>
+                                    <td>Korčula</td>
+                                    <td>200 $</td>
+                                </tr>
+                                <tr>
+                                    <td>Lastovo</td>
+                                    <td>300 $</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Other</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Food</td>
+                                    <td>25 $</td>
+                                </tr>
+                                <tr>
+                                    <td>Drinks</td>
+                                    <td>25 $</td>
+                                </tr>
+                                <tr>
+                                    <td>Food + Drinks</td>
+                                    <td>40 $</td>
+                                </tr>
+                                <tr>
+                                    <td>Tour Guide</td>
+                                    <td>50 $</td>
+                                </tr>
+                                <tr>
+                                    <td>Food + Drinks &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />+ Tour Guide</td>
+                                    <td>75 $</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

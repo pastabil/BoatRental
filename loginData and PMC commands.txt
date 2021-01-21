@@ -1,0 +1,7 @@
+admin@boatrental.com
+Admini$trat0r
+---------------------------------------------------
+add-migration Booking -Context BoatRental.Models.ApplicationDbContext
+update-database Booking -Context BoatRental.Models.ApplicationDbContext
+add-migration Admin -Context BoatRental.Data.LoginDbContext
+update-database Admin -Context BoatRental.Data.LoginDbContext
